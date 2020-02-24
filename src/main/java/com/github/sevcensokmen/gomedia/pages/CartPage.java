@@ -16,6 +16,9 @@ public class CartPage extends BasePage {
     Set<ProductInCart> productListExpectedInCart = new HashSet<>();
     Map<String,ProductInCart> productListExpectedInCart2 = new HashMap<>();
     private final String KEY_ROW_RESULT = "//div[@class='checkout-table']//tr";
+    private final String KEY_CHECK_OUT_BUTTON = "//div[@class='checkout-table']//tr";
+
+
 
     public CartPage() {
 
@@ -25,14 +28,14 @@ public class CartPage extends BasePage {
 
     public void clickCheckOut() {
 
-        driver.findElement(By.cssSelector("p > button")).click();
+        driver.findElement(By.cssSelector(KEY_CHECK_OUT_BUTTON)).click();
 
     }
 
     public void getActualList() {
 
 
-        List<WebElement> rowResult = driver.findElements(By.xpath("//div[@class='checkout-table']//tr"));
+        List<WebElement> rowResult = driver.findElements(By.xpath(KEY_ROW_RESULT));
 
         List<ProductInCart> productListActualInCart = new ArrayList<ProductInCart>();
 
