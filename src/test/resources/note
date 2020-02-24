@@ -1,0 +1,23 @@
+
+
+
+@1235
+    Scenario Outline: I should add cart given number
+      Given I navigate to url "https://skyronic.github.io/vue-spa/#/​"
+      Then Items should be displayed
+        | Product Name           |  Price   | NumberProductStock |
+        | iPad 4 Mini            | $ 500.01 |      2             |
+        | H&M T-Shirt White      | $ 10.99  |     10             |
+        | Charli XCX - Sucker CD | $ 19.99  |      5             |
+      When User click on product "<product>"
+      Then The product detail page should be displayed. With the “In stock” value
+      When "<addProductNumber>" items are added to cart
+      Then The number items in card in header should be updated.
+      And User should add items into cart than there is in stock.
+
+
+      Examples:
+        | product          |  addProductNumber |
+        |H&M T-Shirt White |     2             |
+        |iPad 4 Mini       |     3             |
+
