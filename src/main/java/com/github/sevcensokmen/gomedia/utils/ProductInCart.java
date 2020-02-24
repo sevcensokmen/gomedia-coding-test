@@ -5,13 +5,14 @@ public class ProductInCart {
     private String name;
     private double quantity;
     private int perUnit;
-    private double  total;
+    private double total;
 
     public ProductInCart(String name, double quantity, int perUnit, double total) {
         this.name = name;
         this.quantity = quantity;
         this.perUnit = perUnit;
         this.total = total;
+
     }
 
 
