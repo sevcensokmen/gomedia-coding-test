@@ -15,14 +15,13 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ProductDetailPageSteps extends BaseSteps {
 
-    ProductListPage productList = null;
+    ProductListPage productList = new ProductListPage();
     ProductDetailsPage productDetailsPage = null;
     CartPage cartPage = null;
 
 
     @Given("^User navigates to url$")
     public void user_navigates_to_url() throws Throwable {
-        productList = PageFactory.initElements(DriverManager.getInstance().getDriver(), ProductListPage.class);
         invokeNavigateToPage(getUrl());
     }
 
