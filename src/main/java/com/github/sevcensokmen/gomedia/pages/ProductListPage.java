@@ -12,9 +12,9 @@ import java.util.Map;
 
 public class ProductListPage extends BasePage {
 
-    private final String  KEY_LIST_PRODUCT = "//div[@class='product-container']//div[@class='product']";
-    private final String  KEY_PRODUCT_NAME = "title";
-    private final String  KEY_PRODUCT_PRICE = "price";
+    private final String KEY_LIST_PRODUCT = "//div[@class='product-container']//div[@class='product']";
+    private final String KEY_PRODUCT_NAME = "title";
+    private final String KEY_PRODUCT_PRICE = "price";
 
     private String name;
 
@@ -24,7 +24,7 @@ public class ProductListPage extends BasePage {
         List<Product> productExpectedlist = new ArrayList<Product>();
         List<Map<String, String>> list = dt.asMaps(String.class, String.class);
         for (int i = 0; i < list.size(); i++) {
-            productExpectedlist.add(new Product(list.get(i).get("Product Name"),list.get(i).get("Price")));
+            productExpectedlist.add(new Product(list.get(i).get("Product Name"), list.get(i).get("Price")));
         }
         return (ArrayList<Product>) productExpectedlist;
     }
@@ -50,9 +50,6 @@ public class ProductListPage extends BasePage {
         return new ProductDetailsPage(productName);
 
     }
-
-
-
 
 
 }

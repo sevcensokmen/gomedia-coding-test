@@ -4,20 +4,19 @@ import com.github.sevcensokmen.gomedia.utils.BasePage;
 import org.openqa.selenium.By;
 
 
-
 public class ProductDetailsPage extends BasePage {
 
     //region 'elements'
-    private final String  KEY_ADD_TO_CART_BUTTON = "add-button";
-    private final String  KEY_IN_STOCK = "inventory";
-    private final String  KEY_PRODUCT_NAME ="product-title";
+    private final String KEY_ADD_TO_CART_BUTTON = "add-button";
+    private final String KEY_IN_STOCK = "inventory";
+    private final String KEY_PRODUCT_NAME = "product-title";
 
     private String productName;
     private int inStockAttr = 0;
 
     public ProductDetailsPage(String productName) {
-    this.productName = productName;
-}
+        this.productName = productName;
+    }
 
     public String getProductName() {
         return productName;
@@ -55,9 +54,9 @@ public class ProductDetailsPage extends BasePage {
         boolean addToCartButton = false;
         if (isElementPresent(By.className(KEY_ADD_TO_CART_BUTTON))) {
             if (driver.findElement(By.className(KEY_ADD_TO_CART_BUTTON)).getText().equals("Add to cart"))
-                            addToCartButton = true;
-                    else
-                            addToCartButton = false;
+                addToCartButton = true;
+            else
+                addToCartButton = false;
 
         }
         return addToCartButton;
@@ -75,6 +74,7 @@ public class ProductDetailsPage extends BasePage {
         }
         return addToCartButton;
     }
+
     public boolean outOfStockButtonEnabled() {
 
         boolean addToCartButton = false;
@@ -89,13 +89,12 @@ public class ProductDetailsPage extends BasePage {
     }
 
 
-    public boolean productNameVisible(){
+    public boolean productNameVisible() {
         boolean productNameVisible = false;
-        if(isElementPresent(By.className(KEY_PRODUCT_NAME)))
+        if (isElementPresent(By.className(KEY_PRODUCT_NAME)))
             if (driver.findElement(By.className(KEY_PRODUCT_NAME)).getText().equals(getProductName())) {
                 productNameVisible = true;
-            }
-            else
+            } else
                 productNameVisible = false;
 
         return productNameVisible;
@@ -113,38 +112,37 @@ public class ProductDetailsPage extends BasePage {
 
     }
 
-    public CartPage addToCartButtonClick(){
+    public CartPage addToCartButtonClick() {
 
         driver.findElement(By.className(KEY_ADD_TO_CART_BUTTON)).click();
         return new CartPage();
     }
 
-    public int getToolBarCartValueFromPage(){
+    public int getToolBarCartValueFromPage() {
         return toolBar.getCartValueFromPage();
 
     }
 
-    public void setToolBarCartAttr(){
+    public void setToolBarCartAttr() {
 
-        toolBar.setCartNumberAttr( getToolBarCartValueFromPage());
+        toolBar.setCartNumberAttr(getToolBarCartValueFromPage());
 
     }
 
-    public int getToolBarCartAttr(){
+    public int getToolBarCartAttr() {
         return toolBar.getCartNumberAttr();
 
     }
-    public void setInStockAttr(){
+
+    public void setInStockAttr() {
 
         this.inStockAttr = getInStockFromProductDetailPage();
 
     }
 
-    public int getInStockAttr(){
+    public int getInStockAttr() {
         return inStockAttr;
     }
-
-
 
 
 }

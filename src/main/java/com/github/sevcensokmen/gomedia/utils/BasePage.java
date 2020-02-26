@@ -3,6 +3,7 @@ package com.github.sevcensokmen.gomedia.utils;
 import com.github.sevcensokmen.gomedia.pages.TopMenu;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
 import java.util.NoSuchElementException;
 
 public class BasePage {
@@ -31,7 +32,6 @@ public class BasePage {
         }
 
     }
-
 
 
 }

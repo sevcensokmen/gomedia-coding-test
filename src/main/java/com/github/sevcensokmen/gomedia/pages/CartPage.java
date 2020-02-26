@@ -13,10 +13,9 @@ public class CartPage extends BasePage {
 
 
     Set<ProductInCart> productListExpectedInCart = new HashSet<>();
-    Map<String,ProductInCart> productListExpectedInCart2 = new HashMap<>();
+    Map<String, ProductInCart> productListExpectedInCart2 = new HashMap<>();
     private final String KEY_ROW_RESULT = "//div[@class='checkout-table']//tr";
     private final String KEY_CHECK_OUT_BUTTON = "//div[@class='checkout-table']//tr";
-
 
 
     public CartPage() {
@@ -51,19 +50,19 @@ public class CartPage extends BasePage {
 
     }
 
-    public void addProductListInCart(Product p){
+    public void addProductListInCart(Product p) {
 
 
-        if(productListExpectedInCart2.containsKey(p.getName())){
+        if (productListExpectedInCart2.containsKey(p.getName())) {
             int perUnit = productListExpectedInCart2.get(p.getName()).getPerUnit();
-            perUnit = perUnit +1;
+            perUnit = perUnit + 1;
             productListExpectedInCart2.get(p.getName()).setPerUnit(perUnit);
 
-        }else{
+        } else {
             String price = p.getPrice();
-            price = price.substring(2,price.length());
+            price = price.substring(2, price.length());
             productListExpectedInCart2.put(p.getName(), new ProductInCart(p.getName(), Double.parseDouble(price),
-                   1, Double.parseDouble(price)));
+                    1, Double.parseDouble(price)));
 
 
         }

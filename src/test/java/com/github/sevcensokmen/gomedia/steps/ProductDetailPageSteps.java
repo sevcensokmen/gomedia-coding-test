@@ -32,18 +32,18 @@ public class ProductDetailPageSteps extends BaseSteps {
 
     @Then("^The add to cart button should be visible$")
     public void the_add_to_cart_button_should_be_visible() throws Throwable {
-        Assert.assertTrue("The add to cart button should be visible",productDetailsPage.addToCartButtonVisible());
+        Assert.assertTrue("The add to cart button should be visible", productDetailsPage.addToCartButtonVisible());
     }
 
     @Then("^Product name should be visible$")
     public void product_name_should_be_visible() throws Throwable {
-        Assert.assertTrue("product_name_should_be_visible",productDetailsPage.productNameVisible());
+        Assert.assertTrue("product_name_should_be_visible", productDetailsPage.productNameVisible());
     }
 
 
     @Then("^The stock information should be shown$")
     public void the_stock_information_should_be_shown() throws Throwable {
-        Assert.assertTrue("the_stock_information_should_be_shown",productDetailsPage.inStockVisible());
+        Assert.assertTrue("the_stock_information_should_be_shown", productDetailsPage.inStockVisible());
     }
 
     @When("^User clicks the product \"([^\"]*)\" when it is in stock$")
@@ -59,13 +59,13 @@ public class ProductDetailPageSteps extends BaseSteps {
 
     @Then("^The add to cart button should be disabled$")
     public void the_add_to_cart_button_should_be_disabled() throws Throwable {
-        Assert.assertEquals("The add to cart button should be disabled",productDetailsPage.outOfStockButtonEnabled());
+        Assert.assertEquals("The add to cart button should be disabled", productDetailsPage.outOfStockButtonEnabled());
 
     }
 
     @Then("^The add to cart button should be written out of Stock$")
     public void the_add_to_cart_button_should_be_written_out_of_Stock() throws Throwable {
-        Assert.assertEquals("The add to cart button should be written out of Stock",productDetailsPage.outOfStockButtonVisible());
+        Assert.assertEquals("The add to cart button should be written out of Stock", productDetailsPage.outOfStockButtonVisible());
     }
 
 
@@ -90,7 +90,7 @@ public class ProductDetailPageSteps extends BaseSteps {
     @Then("^The stock information should be updated$")
     public void the_stock_information_should_be_updated() throws Throwable {
 
-        int  inStockAfterClick = productDetailsPage.getInStockFromProductDetailPage();
+        int inStockAfterClick = productDetailsPage.getInStockFromProductDetailPage();
         Assert.assertTrue("The stock information should be updated.", productDetailsPage.getInStockAttr() == inStockAfterClick + 1);
 
     }
@@ -101,9 +101,9 @@ public class ProductDetailPageSteps extends BaseSteps {
         int inStock = Integer.parseInt(stockInParam);
         for (int a = 0; a < inStock; a++) {
 
-                productDetailsPage.addToCartButtonClick();
-                productDetailsPage.setToolBarCartAttr();
-                productDetailsPage.setInStockAttr();
+            productDetailsPage.addToCartButtonClick();
+            productDetailsPage.setToolBarCartAttr();
+            productDetailsPage.setInStockAttr();
 
         }
     }
@@ -111,18 +111,16 @@ public class ProductDetailPageSteps extends BaseSteps {
     @Then("^The add to cart button should be enabled$")
     public void the_add_to_cart_button_should_be_enabled() throws Throwable {
 
-        Assert.assertTrue("The add to cart button should be disabled",productDetailsPage.outOfStockButtonEnabled());
+        Assert.assertTrue("The add to cart button should be disabled", productDetailsPage.outOfStockButtonEnabled());
 
     }
 
 
     @Then("^In stock value is equal to zero$")
     public void in_stock_value_is_equal_to_zero() throws Throwable {
-        Assert.assertTrue("n stock value is equal to zero",productDetailsPage.getInStockFromProductDetailPage()==0);
+        Assert.assertTrue("n stock value is equal to zero", productDetailsPage.getInStockFromProductDetailPage() == 0);
 
     }
-
-
 
 
 }
