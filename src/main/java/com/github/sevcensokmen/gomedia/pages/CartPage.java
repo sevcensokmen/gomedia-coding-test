@@ -5,7 +5,6 @@ import com.github.sevcensokmen.gomedia.utils.DriverManager;
 import com.github.sevcensokmen.gomedia.utils.Product;
 import com.github.sevcensokmen.gomedia.utils.ProductInCart;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.*;

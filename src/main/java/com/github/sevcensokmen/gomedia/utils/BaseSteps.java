@@ -2,9 +2,6 @@ package com.github.sevcensokmen.gomedia.utils;
 
 import org.openqa.selenium.WebDriver;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class BaseSteps {
 
 

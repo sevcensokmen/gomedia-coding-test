@@ -1,12 +1,8 @@
 package com.github.sevcensokmen.gomedia.pages;
 
 import com.github.sevcensokmen.gomedia.utils.BasePage;
-import com.github.sevcensokmen.gomedia.utils.DriverManager;
-import com.github.sevcensokmen.gomedia.utils.Product;
-import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
+
 
 
 public class ProductDetailsPage extends BasePage {
