@@ -6,6 +6,7 @@ import com.github.sevcensokmen.gomedia.utils.Product;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 
 
 public class ProductDetailsPage extends BasePage {
@@ -18,8 +19,7 @@ public class ProductDetailsPage extends BasePage {
     private String productName;
     private int inStockAttr = 0;
 
-
-public ProductDetailsPage(String productName) {
+    public ProductDetailsPage(String productName) {
     this.productName = productName;
 }
 
